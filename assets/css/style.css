@@ -162,6 +162,8 @@ p { margin: 0 0 1em; }
   color: var(--color-text);
   cursor: pointer;
 }
+.icon-btn--plain { border: none; background: none; }
+.icon-btn--plain:hover { color: var(--color-primary); }
 
 /* Ícone do tema */
 .icon-moon { display: none; }

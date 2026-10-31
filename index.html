@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mauricio de Oliveira — Cientista de Dados</title>
+  <meta name="description" content="Portfólio de Mauricio de Oliveira, Cientista de Dados especializado em Inteligência Artificial." />
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script>
+    // Aplica o tema salvo antes da renderização para evitar "flash"
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (t) document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- Cabeçalho / Navegação -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#inicio" class="logo">MO<span>.</span></a>
+
+      <nav class="nav" id="nav" aria-label="Navegação principal">
+        <ul class="nav__list">
+          <li><a href="#sobre" class="nav__link">Sobre</a></li>
+          <li><a href="#projetos" class="nav__link">Projetos</a></li>
+          <li><a href="#habilidades" class="nav__link">Habilidades</a></li>
+          <li><a href="#contato" class="nav__link">Contato</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <button class="icon-btn" id="theme-toggle" aria-label="Alternar tema">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="icon-btn nav-toggle" id="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <!-- Hero -->
+    <section class="hero" id="inicio">
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <p class="eyebrow">Olá, eu sou</p>
+          <h1 class="hero__title">Mauricio de Oliveira</h1>
+          <p class="hero__subtitle">Cientista de Dados · Especialista em Inteligência Artificial</p>
+          <p class="hero__desc">Transformo dados em decisões. Construo modelos de machine learning e soluções de IA generativa que saem do notebook e geram valor real em produção.</p>
+          <div class="hero__cta">
+            <a href="#projetos" class="btn btn--primary">Ver projetos</a>
+            <a href="#contato" class="btn btn--ghost">Entrar em contato</a>
+          </div>
+        </div>
+        <div class="hero__image">
+          <div class="avatar-placeholder" aria-hidden="true">Foto</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sobre -->
+    <section class="section" id="sobre">
+      <div class="container">
+        <h2 class="section__title">Sobre mim</h2>
+        <div class="about">
+          <div class="about__text">
+            <p>Trabalho com dados há cinco anos e, desde a especialização em IA, foco em linguagem natural: faço LLMs responderem com base em documentos reais da empresa, em português, com fontes citadas e taxa de erro medida.</p>
+            <p>Meu trabalho de conclusão comparou estratégias de busca para RAG em contratos jurídicos. A combinação de busca por palavra-chave, embeddings e reranking acertou 23% mais respostas que a busca vetorial pura, e essa abordagem virou o assistente jurídico que está nos meus projetos.</p>
+          </div>
+          <ul class="about__facts">
+            <li><strong>Cargo</strong><span>Cientista de Dados</span></li>
+            <li><strong>Especialização</strong><span>Inteligência Artificial e Machine Learning</span></li>
+            <li><strong>Áreas de foco</strong><span>NLP, IA Generativa, Modelos Preditivos</span></li>
+            <li><strong>Localização</strong><span>Brasil</span></li>
+            <li><strong>Idiomas</strong><span>Português, Inglês</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projetos -->
+    <section class="section section--alt" id="projetos">
+      <div class="container">
+        <h2 class="section__title">Projetos</h2>
+        <div class="grid grid--projects">
+          <article class="card">
+            <div class="card__media" aria-hidden="true"></div>
+            <div class="card__body">
+              <h3 class="card__title">Assistente Jurídico com RAG</h3>
+              <p>Chatbot que responde perguntas sobre contratos e documentos internos usando LLMs com busca semântica em base vetorial, reduzindo em 60% o tempo de consulta da equipe.</p>
+              <ul class="tags"><li>LLM</li><li>RAG</li><li>LangChain</li><li>Vector DB</li></ul>
+              <div class="card__links"><a href="#">Demo</a><a href="#">Código</a></div>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card__media" aria-hidden="true"></div>
+            <div class="card__body">
+              <h3 class="card__title">Previsão de Churn de Clientes</h3>
+              <p>Modelo de classificação com gradient boosting e explicabilidade via SHAP para identificar clientes com risco de cancelamento, com AUC de 0,91 em validação.</p>
+              <ul class="tags"><li>XGBoost</li><li>SHAP</li><li>Scikit-learn</li><li>Pandas</li></ul>
+              <div class="card__links"><a href="#">Demo</a><a href="#">Código</a></div>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card__media" aria-hidden="true"></div>
+            <div class="card__body">
+              <h3 class="card__title">Detecção de Defeitos Industriais</h3>
+              <p>Sistema de visão computacional com redes convolucionais para inspeção automática de peças em linha de produção, atingindo 97% de precisão.</p>
+              <ul class="tags"><li>PyTorch</li><li>CNN</li><li>OpenCV</li><li>Visão Computacional</li></ul>
+              <div class="card__links"><a href="#">Demo</a><a href="#">Código</a></div>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card__media" aria-hidden="true"></div>
+            <div class="card__body">
+              <h3 class="card__title">Análise de Sentimento em Avaliações</h3>
+              <p>Fine-tuning de modelo BERT em português para classificar milhares de avaliações de clientes e gerar um dashboard com tendências de satisfação.</p>
+              <ul class="tags"><li>NLP</li><li>BERT</li><li>Hugging Face</li><li>Streamlit</li></ul>
+              <div class="card__links"><a href="#">Demo</a><a href="#">Código</a></div>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card__media" aria-hidden="true"></div>
+            <div class="card__body">
+              <h3 class="card__title">Previsão de Demanda no Varejo</h3>
+              <p>Modelos de séries temporais para prever vendas por loja e produto, apoiando o planejamento de estoque e reduzindo rupturas em 25%.</p>
+              <ul class="tags"><li>Séries Temporais</li><li>Prophet</li><li>LightGBM</li><li>SQL</li></ul>
+              <div class="card__links"><a href="#">Demo</a><a href="#">Código</a></div>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card__media" aria-hidden="true"></div>
+            <div class="card__body">
+              <h3 class="card__title">Pipeline de MLOps</h3>
+              <p>Pipeline automatizado de treino, versionamento e deploy de modelos com monitoramento de drift e retreinamento agendado na nuvem.</p>
+              <ul class="tags"><li>MLflow</li><li>Docker</li><li>Airflow</li><li>AWS</li></ul>
+              <div class="card__links"><a href="#">Demo</a><a href="#">Código</a></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Habilidades -->
+    <section class="section" id="habilidades">
+      <div class="container">
+        <h2 class="section__title">Habilidades</h2>
+        <div class="grid grid--skills">
+          <div class="skill-group">
+            <h3>Machine Learning</h3>
+            <ul class="tags"><li>Scikit-learn</li><li>XGBoost</li><li>LightGBM</li><li>Séries Temporais</li><li>Estatística</li><li>Feature Engineering</li></ul>
+          </div>
+          <div class="skill-group">
+            <h3>Deep Learning & IA Generativa</h3>
+            <ul class="tags"><li>PyTorch</li><li>TensorFlow</li><li>Hugging Face</li><li>LLMs</li><li>RAG</li><li>LangChain</li><li>Fine-tuning</li></ul>
+          </div>
+          <div class="skill-group">
+            <h3>Dados</h3>
+            <ul class="tags"><li>Python</li><li>SQL</li><li>Pandas</li><li>PySpark</li><li>Power BI</li><li>Streamlit</li></ul>
+          </div>
+          <div class="skill-group">
+            <h3>MLOps & Cloud</h3>
+            <ul class="tags"><li>MLflow</li><li>Docker</li><li>Airflow</li><li>Git</li><li>AWS</li><li>FastAPI</li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contato -->
+    <section class="section section--alt" id="contato">
+      <div class="container contact">
+        <h2 class="section__title">Contato</h2>
+        <p class="contact__lead">Interessado em conversar sobre dados, IA ou uma oportunidade? Fico feliz em trocar uma ideia.</p>
+        <a href="mailto:seu@email.com" class="btn btn--primary">seu@email.com</a>
+        <ul class="socials">
+          <li><a href="#" aria-label="GitHub">GitHub</a></li>
+          <li><a href="#" aria-label="LinkedIn">LinkedIn</a></li>
+          <li><a href="#" aria-label="Kaggle">Kaggle</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Mauricio de Oliveira. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mauricio de Oliveira — Editor de Vídeo</title>
-  <meta name="description" content="Portfólio de Mauricio de Oliveira, editor de vídeo." />
+  <title>Mauricio de Oliveira, editor de vídeo</title>
+  <meta name="description" content="Portfólio de Mauricio de Oliveira, editor de vídeo: documentário, publicidade, videoclipe e YouTube." />
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
   <script>
     // Aplica o tema salvo antes da renderização para evitar "flash"
@@ -23,24 +23,23 @@
 <body>
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
-  <!-- Cabeçalho / Navegação -->
   <header class="header">
     <div class="container header__inner">
-      <a href="#inicio" class="logo">MO<span>.</span></a>
+      <a href="#inicio" class="logo" aria-label="Mauricio de Oliveira, início">MO</a>
 
       <nav class="nav" id="nav" aria-label="Navegação principal">
         <ul class="nav__list">
+          <li><a href="#trabalhos" class="nav__link">Trabalhos</a></li>
           <li><a href="#sobre" class="nav__link">Sobre</a></li>
-          <li><a href="#projetos" class="nav__link">Trabalhos</a></li>
-          <li><a href="#habilidades" class="nav__link">Habilidades</a></li>
+          <li><a href="#processo" class="nav__link">Processo</a></li>
           <li><a href="#contato" class="nav__link">Contato</a></li>
         </ul>
       </nav>
 
       <div class="header__actions">
-        <button class="icon-btn icon-btn--plain" id="theme-toggle" aria-label="Alternar tema">
-          <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-          <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <button class="icon-btn" id="theme-toggle" aria-label="Alternar tema claro e escuro">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         </button>
         <button class="icon-btn nav-toggle" id="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
           <span></span><span></span><span></span>
@@ -50,151 +49,252 @@
   </header>
 
   <main id="conteudo">
-    <!-- Hero -->
+    <!-- Abertura: barras de cor com a cartela de identificação -->
     <section class="hero" id="inicio">
-      <div class="container hero__inner">
-        <div class="hero__text">
-          <p class="eyebrow">Olá, eu sou</p>
-          <h1 class="hero__title">Mauricio de Oliveira</h1>
-          <p class="hero__subtitle">Editor de Vídeo</p>
-          <p class="hero__desc">Edito vídeos que prendem a atenção do primeiro ao último segundo: ritmo, cor e som trabalhando juntos para contar a sua história.</p>
-          <div class="hero__cta">
-            <a href="#projetos" class="btn btn--primary">Ver trabalhos</a>
-            <a href="#contato" class="btn btn--ghost">Entrar em contato</a>
+      <div class="container">
+        <div class="testcard">
+          <div class="testcard__bars" aria-hidden="true">
+            <i style="--c: var(--bar-grey)"></i>
+            <i style="--c: var(--bar-yellow)"></i>
+            <i style="--c: var(--bar-cyan)"></i>
+            <i style="--c: var(--bar-green)"></i>
+            <i style="--c: var(--bar-magenta)"></i>
+            <i style="--c: var(--bar-red)"></i>
+            <i style="--c: var(--bar-blue)"></i>
+          </div>
+          <div class="testcard__castellations" aria-hidden="true">
+            <i style="--c: var(--bar-blue)"></i>
+            <i style="--c: #000"></i>
+            <i style="--c: var(--bar-magenta)"></i>
+            <i style="--c: #000"></i>
+            <i style="--c: var(--bar-cyan)"></i>
+            <i style="--c: #000"></i>
+            <i style="--c: var(--bar-grey)"></i>
+          </div>
+          <div class="testcard__pluge" aria-hidden="true">
+            <i style="--c: #00214c"></i>
+            <i style="--c: #fff"></i>
+            <i style="--c: #32006a"></i>
+            <i style="--c: #000"></i>
+            <i style="--c: #090909"></i>
+            <i style="--c: #131313"></i>
+            <i style="--c: #1d1d1d"></i>
+            <i style="--c: #000"></i>
+          </div>
+
+          <div class="slate">
+            <h1 class="slate__name">Mauricio de Oliveira</h1>
+            <p class="slate__role">Editor de vídeo</p>
+            <p class="slate__tc" aria-hidden="true"><span id="timecode">01:00:00:00</span></p>
           </div>
         </div>
+
+        <div class="hero__intro">
+          <p class="hero__lead">Edito vídeos que prendem a atenção do primeiro ao último segundo: ritmo, cor e som trabalhando juntos para contar a sua história.</p>
+          <div class="hero__cta">
+            <a href="#trabalhos" class="btn btn--solid">Ver trabalhos</a>
+            <a href="#contato" class="btn btn--line">Falar sobre um projeto</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trabalhos
+         Para abrir um vídeo aqui mesmo no site, troque o href="#" do link "Assistir"
+         por um link do YouTube ou do Vimeo. -->
+    <section class="section" id="trabalhos">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">Trabalhos</h2>
+          <div class="filters" role="group" aria-label="Filtrar trabalhos por formato">
+            <button class="filter" data-filter="todos" aria-pressed="true">Todos</button>
+            <button class="filter" data-filter="documentario" aria-pressed="false"><span class="swatch" style="--c: var(--bar-yellow)"></span>Documentário</button>
+            <button class="filter" data-filter="publicidade" aria-pressed="false"><span class="swatch" style="--c: var(--bar-magenta)"></span>Publicidade</button>
+            <button class="filter" data-filter="videoclipe" aria-pressed="false"><span class="swatch" style="--c: var(--bar-red)"></span>Videoclipe</button>
+            <button class="filter" data-filter="youtube" aria-pressed="false"><span class="swatch" style="--c: var(--bar-cyan)"></span>YouTube</button>
+            <button class="filter" data-filter="motion" aria-pressed="false"><span class="swatch" style="--c: var(--bar-blue)"></span>Motion</button>
+            <button class="filter" data-filter="eventos" aria-pressed="false"><span class="swatch" style="--c: var(--bar-green)"></span>Eventos</button>
+          </div>
+        </div>
+
+        <p class="works__note">A barra abaixo de cada trabalho mostra a duração do vídeo final na mesma escala.</p>
+
+        <ol class="works" id="works">
+          <li class="work" data-cat="documentario" style="--c: var(--bar-yellow); --dur: 900">
+            <p class="work__cat"><span class="swatch"></span>Documentário</p>
+            <div class="work__main">
+              <h3 class="work__title">Mãos de Barro</h3>
+              <p class="work__desc">Curta documental sobre ceramistas do interior de Minas Gerais, selecionado para dois festivais de curtas.</p>
+              <p class="work__role">Montagem, cor e mixagem de som</p>
+              <div class="clip" aria-hidden="true"><span></span></div>
+            </div>
+            <p class="work__dur"><time datetime="PT15M">15:00</time></p>
+            <a class="work__link" href="#">Assistir<span class="visually-hidden">: Mãos de Barro</span></a>
+          </li>
+
+          <li class="work" data-cat="publicidade" style="--c: var(--bar-magenta); --dur: 30">
+            <p class="work__cat"><span class="swatch"></span>Publicidade</p>
+            <div class="work__main">
+              <h3 class="work__title">Campanha de verão para marca de moda</h3>
+              <p class="work__desc">Filme de 30 segundos e versões curtas para redes sociais, com a edição no ritmo da trilha.</p>
+              <p class="work__role">Montagem e versões para Reels</p>
+              <div class="clip" aria-hidden="true"><span></span></div>
+            </div>
+            <p class="work__dur"><time datetime="PT30S">00:30</time></p>
+            <a class="work__link" href="#">Assistir<span class="visually-hidden">: Campanha de verão</span></a>
+          </li>
+
+          <li class="work" data-cat="videoclipe" style="--c: var(--bar-red); --dur: 228">
+            <p class="work__cat"><span class="swatch"></span>Videoclipe</p>
+            <div class="work__main">
+              <h3 class="work__title">Noite Alta</h3>
+              <p class="work__desc">Videoclipe para banda independente, com cortes no beat e um look de cor cinematográfico.</p>
+              <p class="work__role">Montagem e color grading</p>
+              <div class="clip" aria-hidden="true"><span></span></div>
+            </div>
+            <p class="work__dur"><time datetime="PT3M48S">03:48</time></p>
+            <a class="work__link" href="#">Assistir<span class="visually-hidden">: Noite Alta</span></a>
+          </li>
+
+          <li class="work" data-cat="youtube" style="--c: var(--bar-cyan); --dur: 1080">
+            <p class="work__cat"><span class="swatch"></span>YouTube</p>
+            <div class="work__main">
+              <h3 class="work__title">Canal de tecnologia</h3>
+              <p class="work__desc">Edição semanal de vídeos longos com cortes dinâmicos, legendas e grafismos, para um canal de 300 mil inscritos.</p>
+              <p class="work__role">Montagem, legendas e motion graphics</p>
+              <div class="clip" aria-hidden="true"><span></span></div>
+            </div>
+            <p class="work__dur"><time datetime="PT18M">18:00</time><small>por episódio</small></p>
+            <a class="work__link" href="#">Assistir<span class="visually-hidden">: Canal de tecnologia</span></a>
+          </li>
+
+          <li class="work" data-cat="motion" style="--c: var(--bar-blue); --dur: 12">
+            <p class="work__cat"><span class="swatch"></span>Motion</p>
+            <div class="work__main">
+              <h3 class="work__title">Vinhetas para podcast</h3>
+              <p class="work__desc">Abertura, encerramento e lower thirds animados para um podcast de entrevistas.</p>
+              <p class="work__role">Motion design e identidade visual</p>
+              <div class="clip" aria-hidden="true"><span></span></div>
+            </div>
+            <p class="work__dur"><time datetime="PT12S">00:12</time><small>abertura</small></p>
+            <a class="work__link" href="#">Assistir<span class="visually-hidden">: Vinhetas para podcast</span></a>
+          </li>
+
+          <li class="work" data-cat="eventos" style="--c: var(--bar-green); --dur: 180">
+            <p class="work__cat"><span class="swatch"></span>Eventos</p>
+            <div class="work__main">
+              <h3 class="work__title">Aftermovie de festival</h3>
+              <p class="work__desc">Três minutos de festival de música, montados a partir de mais de 20 horas de material bruto.</p>
+              <p class="work__role">Montagem e sound design</p>
+              <div class="clip" aria-hidden="true"><span></span></div>
+            </div>
+            <p class="work__dur"><time datetime="PT3M">03:00</time></p>
+            <a class="work__link" href="#">Assistir<span class="visually-hidden">: Aftermovie de festival</span></a>
+          </li>
+        </ol>
       </div>
     </section>
 
     <!-- Sobre -->
-    <section class="section" id="sobre">
+    <section class="section section--alt" id="sobre">
+      <div class="container about">
+        <h2 class="section__title">Sobre</h2>
+        <div class="about__text">
+          <p>Edito vídeos há cinco anos, passando por publicidade, YouTube e documentário. Cuido da pós-produção inteira: montagem, correção de cor, mixagem de áudio e motion graphics.</p>
+          <p>Gosto de cortes que respeitam o ritmo da música e da fala. Meu trabalho mais recente, um documentário curto sobre artesãos do interior de Minas, foi selecionado para dois festivais de curtas.</p>
+        </div>
+        <dl class="facts">
+          <div><dt>Formatos</dt><dd>Comerciais, YouTube, Reels, documentário</dd></div>
+          <div><dt>Base</dt><dd>Brasil, trabalho remoto</dd></div>
+          <div><dt>Idiomas</dt><dd>Português e inglês</dd></div>
+          <div><dt>Entrega</dt><dd>Do 9:16 ao 2.39:1, com legendas e versões</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- Ferramentas, organizadas como trilhas de uma timeline -->
+    <section class="section" id="ferramentas">
       <div class="container">
-        <h2 class="section__title">Sobre mim</h2>
-        <div class="about">
-          <div class="about__text">
-            <p>Edito vídeos há cinco anos, passando por publicidade, YouTube e documentário. Cuido do processo inteiro da pós-produção: montagem, correção de cor, mixagem de áudio e motion graphics.</p>
-            <p>Gosto de cortes que respeitam o ritmo da música e da fala. Meu trabalho mais recente, um documentário curto sobre artesãos do interior de Minas, foi selecionado para dois festivais de curtas.</p>
+        <h2 class="section__title">Ferramentas</h2>
+        <p class="section__lead">Organizadas como as trilhas de uma timeline: cor por cima, grafismo, imagem e som por baixo.</p>
+        <div class="tracks">
+          <div class="track">
+            <p class="track__head"><b>V3</b>Cor</p>
+            <ul class="track__clips"><li>DaVinci Resolve</li><li>Color grading</li><li>Correção de cor</li><li>LUTs</li></ul>
           </div>
-          <ul class="about__facts">
-            <li><strong>Função</strong><span>Editor de Vídeo</span></li>
-            <li><strong>Especialidades</strong><span>Montagem, Color Grading, Motion</span></li>
-            <li><strong>Formatos</strong><span>Comerciais, YouTube, Reels, Documentário</span></li>
-            <li><strong>Localização</strong><span>Brasil</span></li>
-            <li><strong>Idiomas</strong><span>Português, Inglês</span></li>
-          </ul>
+          <div class="track">
+            <p class="track__head"><b>V2</b>Grafismo</p>
+            <ul class="track__clips"><li>After Effects</li><li>Motion graphics</li><li>Lower thirds</li><li>Legendagem</li></ul>
+          </div>
+          <div class="track">
+            <p class="track__head"><b>V1</b>Montagem</p>
+            <ul class="track__clips"><li>Premiere Pro</li><li>DaVinci Resolve</li><li>Final Cut Pro</li><li>Narrativa</li><li>Ritmo</li></ul>
+          </div>
+          <div class="track track--audio">
+            <p class="track__head"><b>A1</b>Áudio</p>
+            <ul class="track__clips"><li>Audition</li><li>Mixagem</li><li>Sound design</li><li>Limpeza de áudio</li></ul>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Projetos -->
-    <section class="section section--alt" id="projetos">
+    <!-- Processo -->
+    <section class="section section--alt" id="processo">
       <div class="container">
-        <h2 class="section__title">Trabalhos</h2>
-        <div class="grid grid--projects">
-          <article class="card">
-            <div class="card__media" aria-hidden="true"></div>
-            <div class="card__body">
-              <h3 class="card__title">Mãos de Barro — Documentário</h3>
-              <p>Curta documental de 15 minutos sobre ceramistas do interior de Minas Gerais. Montagem, cor e mixagem de som.</p>
-              <ul class="tags"><li>Documentário</li><li>Montagem</li><li>Color Grading</li></ul>
-              <div class="card__links"><a href="#">Assistir</a></div>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card__media" aria-hidden="true"></div>
-            <div class="card__body">
-              <h3 class="card__title">Campanha de Verão — Marca de Moda</h3>
-              <p>Filme publicitário de 30 segundos e versões curtas para redes sociais, com edição no ritmo da trilha.</p>
-              <ul class="tags"><li>Publicidade</li><li>Premiere Pro</li><li>Reels</li></ul>
-              <div class="card__links"><a href="#">Assistir</a></div>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card__media" aria-hidden="true"></div>
-            <div class="card__body">
-              <h3 class="card__title">Videoclipe — "Noite Alta"</h3>
-              <p>Videoclipe para banda independente, com cortes sincronizados ao beat e look de cor cinematográfico.</p>
-              <ul class="tags"><li>Videoclipe</li><li>DaVinci Resolve</li><li>Color Grading</li></ul>
-              <div class="card__links"><a href="#">Assistir</a></div>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card__media" aria-hidden="true"></div>
-            <div class="card__body">
-              <h3 class="card__title">Canal de Tecnologia no YouTube</h3>
-              <p>Edição semanal de vídeos longos com cortes dinâmicos, legendas e grafismos, para um canal de 300 mil inscritos.</p>
-              <ul class="tags"><li>YouTube</li><li>Motion Graphics</li><li>Legendagem</li></ul>
-              <div class="card__links"><a href="#">Assistir</a></div>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card__media" aria-hidden="true"></div>
-            <div class="card__body">
-              <h3 class="card__title">Vinhetas para Podcast</h3>
-              <p>Pacote de abertura, encerramento e lower thirds animados para um podcast de entrevistas.</p>
-              <ul class="tags"><li>After Effects</li><li>Motion Design</li><li>Branding</li></ul>
-              <div class="card__links"><a href="#">Assistir</a></div>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card__media" aria-hidden="true"></div>
-            <div class="card__body">
-              <h3 class="card__title">Aftermovie de Festival</h3>
-              <p>Resumo de 3 minutos de um festival de música, montado a partir de mais de 20 horas de material bruto.</p>
-              <ul class="tags"><li>Eventos</li><li>Montagem</li><li>Sound Design</li></ul>
-              <div class="card__links"><a href="#">Assistir</a></div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Habilidades -->
-    <section class="section" id="habilidades">
-      <div class="container">
-        <h2 class="section__title">Habilidades</h2>
-        <div class="grid grid--skills">
-          <div class="skill-group">
-            <h3>Edição e Montagem</h3>
-            <ul class="tags"><li>Premiere Pro</li><li>DaVinci Resolve</li><li>Final Cut Pro</li><li>Narrativa</li><li>Ritmo</li></ul>
-          </div>
-          <div class="skill-group">
-            <h3>Cor</h3>
-            <ul class="tags"><li>Color Grading</li><li>Correção de Cor</li><li>LUTs</li><li>DaVinci Resolve</li></ul>
-          </div>
-          <div class="skill-group">
-            <h3>Motion e Grafismo</h3>
-            <ul class="tags"><li>After Effects</li><li>Motion Graphics</li><li>Lower Thirds</li><li>Legendagem</li></ul>
-          </div>
-          <div class="skill-group">
-            <h3>Áudio</h3>
-            <ul class="tags"><li>Audition</li><li>Mixagem</li><li>Sound Design</li><li>Limpeza de Áudio</li></ul>
-          </div>
-        </div>
+        <h2 class="section__title">Como funciona um projeto</h2>
+        <ol class="steps">
+          <li>
+            <h3>Conversa e briefing</h3>
+            <p>Você me conta o objetivo, o público, onde o vídeo vai passar e o prazo. Saio daqui com um orçamento fechado.</p>
+          </li>
+          <li>
+            <h3>Decupagem</h3>
+            <p>Assisto todo o material bruto, marco os melhores momentos e organizo tudo antes do primeiro corte.</p>
+          </li>
+          <li>
+            <h3>Primeiro corte</h3>
+            <p>Monto a estrutura e o ritmo. Você recebe um link para comentar direto no tempo do vídeo.</p>
+          </li>
+          <li>
+            <h3>Cor, som e grafismo</h3>
+            <p>Com o corte aprovado, faço o color grading, a mixagem e os grafismos.</p>
+          </li>
+          <li>
+            <h3>Entrega</h3>
+            <p>Exporto nos formatos de cada plataforma, com legendas e versões curtas quando precisar.</p>
+          </li>
+        </ol>
       </div>
     </section>
 
     <!-- Contato -->
-    <section class="section section--alt" id="contato">
-      <div class="container contact">
+    <section class="section contact" id="contato">
+      <div class="container">
         <h2 class="section__title">Contato</h2>
-        <p class="contact__lead">Tem um projeto em vídeo em mente? Me conte a ideia e vamos conversar.</p>
-        <a href="mailto:seu@email.com" class="btn btn--primary">seu@email.com</a>
+        <p class="contact__lead">Tem material gravado ou um vídeo em mente? Me conte a ideia e o prazo, e eu respondo em até um dia útil.</p>
+        <a href="mailto:seu@email.com" class="contact__email">seu@email.com</a>
         <ul class="socials">
-          <li><a href="#" aria-label="Instagram">Instagram</a></li>
-          <li><a href="#" aria-label="YouTube">YouTube</a></li>
-          <li><a href="#" aria-label="Vimeo">Vimeo</a></li>
-          <li><a href="#" aria-label="LinkedIn">LinkedIn</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">YouTube</a></li>
+          <li><a href="#">Vimeo</a></li>
+          <li><a href="#">LinkedIn</a></li>
         </ul>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="container">
-      <p>&copy; <span id="year"></span> Mauricio de Oliveira. Todos os direitos reservados.</p>
+    <div class="container footer__inner">
+      <p>&copy; <span id="year"></span> Mauricio de Oliveira</p>
+      <a href="#inicio">Voltar ao início</a>
     </div>
   </footer>
+
+  <!-- Player para vídeos do YouTube e do Vimeo -->
+  <dialog class="player" id="player" aria-label="Vídeo">
+    <div class="player__frame"></div>
+    <form method="dialog"><button class="player__close">Fechar</button></form>
+  </dialog>
 
   <script src="assets/js/main.js"></script>
 </body>

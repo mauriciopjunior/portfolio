@@ -1,20 +1,12 @@
 // Ano atual no rodapé
 document.getElementById('year').textContent = new Date().getFullYear();
 
-const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-// Alternância de tema (claro/escuro)
+// Alternância de tema: o site abre no escuro; o botão troca para o claro
 const root = document.documentElement;
 const themeToggle = document.getElementById('theme-toggle');
 
-function currentTheme() {
-  const explicit = root.getAttribute('data-theme');
-  if (explicit) return explicit;
-  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-}
-
 themeToggle.addEventListener('click', () => {
-  const next = currentTheme() === 'dark' ? 'light' : 'dark';
+  const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
   root.setAttribute('data-theme', next);
   try { localStorage.setItem('theme', next); } catch (e) {}
 });
@@ -53,73 +45,54 @@ sections.forEach((s) => s && observer.observe(s));
 const header = document.querySelector('.header');
 window.addEventListener('scroll', () => header.classList.toggle('is-scrolled', window.scrollY > 8), { passive: true });
 
-// Entrada suave dos blocos ao aparecerem na tela
-const reveals = document.querySelectorAll('.reveal');
-if ('IntersectionObserver' in window) {
-  const revealObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('is-visible');
-        revealObserver.unobserve(entry.target);
-      });
-    },
-    { rootMargin: '0px 0px -10% 0px' }
-  );
-  reveals.forEach((el) => revealObserver.observe(el));
-} else {
-  reveals.forEach((el) => el.classList.add('is-visible'));
-}
+// Filtro de trabalhos por formato
+const filters = [...document.querySelectorAll('.filter')];
+const works = [...document.querySelectorAll('.work')];
 
-// Timecode da janela de edição: começa em 01:00:00:00, a 24 quadros por segundo
-const tc = document.getElementById('timecode');
-const FPS = 24;
-const pad = (n) => String(n).padStart(2, '0');
+filters.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const cat = btn.dataset.filter;
+    filters.forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
+    works.forEach((w) => { w.hidden = cat !== 'todos' && w.dataset.cat !== cat; });
+  });
+});
 
-function formatTimecode(totalFrames) {
-  const f = totalFrames % FPS;
-  const s = Math.floor(totalFrames / FPS) % 60;
-  const m = Math.floor(totalFrames / (FPS * 60)) % 60;
-  const h = 1 + Math.floor(totalFrames / (FPS * 3600));
-  return `${pad(h)}:${pad(m)}:${pad(s)}:${pad(f)}`;
-}
-
-if (tc && !reduceMotion) {
-  const start = performance.now();
-  const tick = (now) => {
-    tc.textContent = formatTimecode(Math.floor(((now - start) / 1000) * FPS));
-    requestAnimationFrame(tick);
-  };
-  requestAnimationFrame(tick);
-}
-
-// Player: links do YouTube ou do Vimeo abrem o vídeo aqui mesmo
-const player = document.getElementById('player');
-const frame = player.querySelector('.player__frame');
-
-function embedUrl(href) {
+// Links do YouTube e do Vimeo: miniatura automática (YouTube) e player no próprio site
+function videoInfo(href) {
   let url;
   try { url = new URL(href, location.href); } catch (e) { return null; }
   const host = url.hostname.replace(/^www\./, '');
-  if (host === 'youtu.be') return `https://www.youtube-nocookie.com/embed/${url.pathname.slice(1)}?autoplay=1`;
-  if (host === 'youtube.com' || host === 'm.youtube.com') {
-    const id = url.searchParams.get('v') || url.pathname.split('/').pop();
-    return id ? `https://www.youtube-nocookie.com/embed/${id}?autoplay=1` : null;
+  let id = null;
+  if (host === 'youtu.be') id = url.pathname.slice(1);
+  if (host === 'youtube.com' || host === 'm.youtube.com') id = url.searchParams.get('v') || url.pathname.split('/').pop();
+  if (id) {
+    return {
+      embed: `https://www.youtube-nocookie.com/embed/${id}?autoplay=1`,
+      thumb: `https://i.ytimg.com/vi/${id}/hqdefault.jpg`,
+    };
   }
   if (host === 'vimeo.com') {
-    const id = url.pathname.split('/').filter(Boolean)[0];
-    return /^\d+$/.test(id || '') ? `https://player.vimeo.com/video/${id}?autoplay=1` : null;
+    const vid = url.pathname.split('/').filter(Boolean)[0];
+    if (/^\d+$/.test(vid || '')) return { embed: `https://player.vimeo.com/video/${vid}?autoplay=1` };
   }
   return null;
 }
 
-document.querySelectorAll('article .card__link').forEach((link) => {
+const player = document.getElementById('player');
+const frame = player.querySelector('.player__frame');
+
+document.querySelectorAll('.work__link').forEach((link) => {
+  const info = videoInfo(link.getAttribute('href'));
+  if (!info) return;
+
+  const still = link.querySelector('.work__still');
+  if (info.thumb && still) still.style.setProperty('--thumb', `url("${info.thumb}")`);
+
   link.addEventListener('click', (e) => {
-    const src = embedUrl(link.getAttribute('href'));
-    if (!src || typeof player.showModal !== 'function') return;
+    if (typeof player.showModal !== 'function') return;
     e.preventDefault();
-    const title = link.closest('.card').querySelector('.card__title').textContent;
-    frame.innerHTML = `<iframe src="${src}" title="${title.replace(/"/g, '&quot;')}" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
+    const title = link.querySelector('.work__title').textContent;
+    frame.innerHTML = `<iframe src="${info.embed}" title="${title.replace(/"/g, '&quot;')}" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
     player.showModal();
   });
 });
